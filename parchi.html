@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="parchi.css">
+    <title>Parchi</title>
+</head>
+<body>
+  <div class="dicecontainer">
+    <button class="rollbtn" onclick="rolldice()">Roll </button>
+    <img class="dice" src="images/dice/dice6.svg" alt="dice"></div>
+    <div class="table">
+
+      <div class="container" id="container1">
+
+       <div class="circle yellow">
+
+        <div class="piece Yellow" id="piece-yellow-1"></div>
+        <div class="piece Yellow" id="piece-yellow-2"></div>
+        <div class="piece Yellow" id="piece-yellow-3"></div>
+        <div class="piece Yellow" id="piece-yellow-4"></div>
+
+       </div>
+
+
+      </div>
+
+      <div class="container" id="container2">
+
+            <div class="place1" value="10">10</div>
+            <div class="place yellow" value="Y6"></div>
+            <div class="place"value="24">24</div>
+            <div class="place1" value="11">11</div>
+            <div class="place yellow" value="Y5"></div>
+            <div class="place" value="23">23</div>
+            <div class="place safe" value="12"> <div class="safe-circle"></div> </div>
+            <div class="place yellow" value="Y4"></div>
+            <div class="place yellowhome" value="22"> <div class="safe-circle"></div> </div>
+            <div class="place1" value="13"> 13</div> 
+            <div class="place yellow" value="Y3"></div>
+            <div class="place" value="21">21</div> 
+            <div class="place1" value="14">14</div>
+            <div class="place yellow" value="Y2"></div>
+            <div class="place" value="20">20</div>
+            <div class="place1" value="15">15</div>
+            <div class="place yellow" value="Y1"></div>
+            <div class="place" value="19">19</div>
+            <div class="place1" value="16">16</div>
+    
+            <div class="place safe" value="17"> <div class="safe-circle"></div> </div>
+    
+            <div class="place" value="18">18</div>
+      </div>
+
+      <div class="container" id="container3">
+
+        <div class="circle blue">
+
+          <div class="piece Blue" id="piece-blue-1"></div>
+          <div class="piece Blue" id="piece-blue-2"></div>
+          <div class="piece Blue" id="piece-blue-3"></div>
+          <div class="piece Blue" id="piece-blue-4"></div>
+          
+        </div>
+      </div>
+
+      <div class="container" id="container4">
+           <div class="place1" value="27">27</div>
+            <div class="place green" value="G6"></div>
+            <div class="place" value="41">41</div>
+            <div class="place1" value="28">28</div>
+            <div class="place green" value="G5"></div>
+            <div class="place" value="40">40</div>
+       <div class="place safe" value="29"> <div class="safe-circle"></div> </div>
+            <div class="place green" value="G4"></div>
+            <div class="place greenhome" value="39"> <div class="safe-circle"></div> </div>
+            <div class="place1" value="30">30</div>
+            <div class="place green" value="G3"></div>
+            <div class="place" value="38">38</div>
+            <div class="place1" value="31">31</div>
+            <div class="place green" value="G2"></div>
+            <div class="place" value="37">37</div>
+            <div class="place1" value="32">32</div>
+            <div class="place green" value="G1"></div>
+            <div class="place" value="36">36</div>
+            <div class="place1" value="33">33</div>
+    
+            <div class="place safe" value="34"> <div class="safe-circle"></div> </div>
+    
+            <div class="place" value="35">35</div>
+      </div>
+
+
+      <div class="container" id="container5">
+
+     <div class="lastyellow place" value="Y7"></div>
+     <div class="lastred place" value="R7"></div>
+     <div class="lastgreen place" value="G7"></div>
+     <div class="lastblue place" value="B7"></div>
+
+     <div class="place25" value="25"><span>25<span></div>
+     <div class="place26" value="26"><span>26<span></span></div>
+
+     <div class="place42" value="42"><span>42<span></div>
+     <div class="place43" value="43">43</div>
+
+     <div class="place59" value="59">59</div>
+     
+      <div class="place60" value="60">  <span>60</span></div>
+      
+
+     <div class="place8" value="8"><span>8<span></div>
+     <div class="place9" value="9"><span>9<span></div>
+     
+
+       <div class="square">
+        <div class="place"></div>
+        <div class="triangle triangle-1" value="Y8"></div>
+        <div class="triangle triangle-2" value="R8"></div>
+        <div class="triangle triangle-3" value="G8"></div>
+        <div class="triangle triangle-4"  value="B8"></div>
+        
+       </div>
+
+
+      </div>
+
+      <div class="container" id="container6">
+        <div class="place1" value="61">61</div>
+        <div class="place blue" value="B6"></div>
+        <div class="place" value="7">7</div>
+        <div class="place1" value="62">62</div>
+        <div class="place blue" value="B5"></div>
+        <div class="place" value="6">6</div>
+        <div class="place safe" value="63"> <div class="safe-circle"></div> </div>
+        <div class="place blue" value="B4"></div>
+        <div class="place bluehome" value="5"> <div class="safe-circle"></div> </div>
+        <div class="place1" value="64">64</div>
+        <div class="place blue" value="B3"></div>
+        <div class="place" value="4">4</div>
+        <div class="place1" value="65">65</div>
+        <div class="place blue" value="B2"></div>
+        <div class="place" value="3">3</div>
+        <div class="place1" value="66">66</div>
+        <div class="place blue" value="B1"></div>
+        <div class="place" value="2">2</div>
+        <div class="place1" value="67">67</div>
+
+        <div class="place safe" value="68"> <div class="safe-circle"></div> </div>
+
+        <div class="place" value="1">1</div>
+      </div>
+      <div class="container" id="container7">
+
+        <div class="circle green">
+
+          <div class="piece Green" id="piece-green-1"></div>
+          <div class="piece Green" id="piece-green-2"></div>
+          <div class="piece Green" id="piece-green-3"></div>
+          <div class="piece Green" id="piece-green-4"></div>
+        </div>
+      </div>
+      <div class="container" id="container8">
+
+        <div class="place1"value="44">44</div>
+        <div class="place red" value="R6"></div>
+        <div class="place" value="58">58</div>
+        <div class="place1" value="45">45</div>
+        <div class="place red" value="R5"></div>
+        <div class="place" value="57">57</div>
+        <div class="place safe" value="46"> <div class="safe-circle"></div> </div>
+        <div class="place red" value="R4"></div>
+        <div class="place redhome" value="56"> <div class="safe-circle"></div> </div>
+        <div class="place1" value="47">47</div>
+        <div class="place red" value="R3"></div>
+        <div class="place" value="55">55</div>
+        <div class="place1" value="48">48</div>
+        <div class="place red" value="R2"></div>
+        <div class="place" value="54">54</div>
+        <div class="place1" value="49">49</div>
+        <div class="place red" value="R1"></div>
+        <div class="place" value="53">53</div>
+        <div class="place1" value="50">50</div>
+
+        <div class="place safe" value="51">
+         <div class="safe-circle"></div>
+        </div>
+        <div class="place" value="52">52</div>
+
+      </div>
+
+      <div class="container" id="container9">
+
+        <div class="circle red">
+
+          <div class="piece Red" id="piece-red-1"></div>
+          <div class="piece Red" id="piece-red-2"></div>
+          <div class="piece Red" id="piece-red-3"></div>
+          <div class="piece Red" id="piece-red-4"></div>
+
+        </div>
+      </div>
+    </div>
+ 
+
+    <script src="parchi.js"></script>
+</body>
+</html>

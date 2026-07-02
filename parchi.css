@@ -1,0 +1,431 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    
+    }
+
+    body {
+        display: block;
+        background-color: grey;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        margin: 0; 
+        background-color: bisque;
+    }
+.dicecontainer{
+    display: block;
+    position:absolute;
+    width:13%;
+    height: 8%;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    gap: 11%;
+    
+}
+
+.rollbtn{
+    display: block;
+width: 80%;
+background-color: rgb(254, 204, 143);
+border: none;
+border: 2px solid rgb(248, 179, 95);
+border-radius: 9px;
+font-size: 20px;
+}
+
+
+
+
+.table{
+display: block;
+ background-color: white;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ width: 525px;
+ height: 525px;
+border: 3px solid black;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+}
+
+.piece{
+    display: block;
+    width: 21px; 
+   height: 21px;
+   border: 2px solid black;
+   border-radius: 50%;
+   background-color: white;
+   position: relative;
+   cursor: pointer;
+   
+}
+
+.container{
+  display: block;
+  outline: 1px solid black;
+    
+}
+#container6{
+    transform: rotate(-90deg);
+}
+#container2{
+    transform: rotate(180deg);
+}
+#container4{
+    transform: rotate(90deg);
+}
+#container2,#container8,#container4,#container6{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(7, 1fr);    /* 7 rows */
+    width: 100%; 
+    height: 100%;
+ 
+}
+
+
+#container1,#container3,#container7,#container9{
+    position: relative;
+}
+
+
+.circle {
+    width: 70%;
+    height:70%;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Create two columns */
+    grid-template-rows: repeat(2, 1fr); /* Create two rows */
+    gap: 5px; /* Space between the pieces */
+    justify-items: center; /* Center pieces horizontally */
+    align-items: center; /* Center pieces vertically */
+    background-color: lightgray; 
+}
+
+.redhome,.red{
+  background-color: red;
+}
+.bluehome,.blue{
+    background-color: blue;
+  }
+  .greenhome,.green{
+    background-color: green;
+  }
+  .yellowhome,.yellow{
+    background-color: yellow;
+  }
+
+  .Yellow{
+background-color: rgb(216, 216, 0);
+  }
+ .Red{
+background-color: rgb(216, 1, 1);
+ }
+ .Green{
+    background-color: rgb(0, 148, 0);
+
+ }
+ .Blue{
+background-color: rgb(67, 67, 240);
+ }
+
+  
+.square{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+   width: 125px; 
+   height: 125px;
+   border: 2px solid black;
+   
+}
+
+.place{
+   border: 1px solid rgb(0, 0, 0);
+   position: relative;
+   display: flex;
+   justify-content:  left;
+   padding-left: 1px;
+}
+.place1{
+    border: 1px solid rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    justify-content:  right;
+    padding-right: 1px;
+ }
+
+.safe{
+background-color: rgb(70, 55, 55);
+position: relative;
+}
+
+
+.safe-circle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+   width: 21px; 
+   height: 21px;
+   border: 2px solid black;
+   border-radius: 50%;
+   background-color: white;
+   
+}
+
+
+.triangle-1{
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0 , 100% 0 , 50% 50%);
+}
+
+.triangle-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 100% , 100% 100% , 50% 50%);
+}
+.triangle-3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0 ,0 100%, 50% 50% );
+}
+.triangle-4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 100% , 100% 0, 50% 50%  );
+    
+}
+
+#container5{
+    position: relative;
+    background-color: black;
+     
+    }
+
+.lastyellow{
+    position: absolute;
+  width: 33.6%;  
+  height: 14.6%;
+  margin-left: 33.2%;
+ background-color: yellow;
+}
+.lastred{
+    position: absolute; 
+    top: 85.6%; 
+    width: 33.4%;  
+    height: 14.5% ;
+  margin-left: 33.3%;
+ background-color:red;
+}
+
+.lastgreen{
+    position: absolute;
+    top: 33.3%;
+    right: 86%;
+  width: 14%;  
+  height: 33.5%;
+ background-color: green;
+ border-right: none;
+}
+
+.lastblue{
+    position: absolute;
+    top: 32.4%;
+    left: 86%;
+  border-left: none;
+  border-right: none;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 25px;  
+  height: 35%;
+ background-color: blue;
+}
+
+
+.place8{
+    position: absolute;
+    top: 0;
+    right:0 ;
+    width: 14%;
+    height: 33%;
+    clip-path: polygon(0 45%, 100% 3%, 100% 99% , 0 99% );
+    background-color: white;
+    display: flex;
+    justify-content: left;
+}
+
+.place8 span {
+    display: block; /* Ensure the text is treated as a block element */
+    position: absolute; /* Position the text absolutely within .place42 */
+    transform: rotate(-90deg); /* Rotate the text by 90 degrees */
+    transform-origin: center; 
+    margin-top: 42px;
+    margin-left: 7px;
+}
+
+.place9{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 14%;
+    clip-path: polygon(1% 3%, 97% 3%, 55% 100%, 1% 100% );
+    background-color: white;
+
+}
+
+.place9 span {
+    display: block; /* Ensure the text is treated as a block element */
+    position: absolute; /* Position the text absolutely within .place42 */
+    transform: rotate(180deg); /* Rotate the text by 90 degrees */
+    transform-origin: center; 
+    margin-left: 1px;
+    margin-top: 3px;
+    
+}
+
+.place25{
+    display: block;
+    position: absolute;
+    width: 33%;
+    height: 14%;
+    clip-path: polygon(4% 4%, 99% 4%, 99% 99%, 45% 100% );
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    padding-top: 3px;
+}
+.place25 span {
+    display: block; /* Ensure the text is treated as a block element */
+    position: absolute; /* Position the text absolutely within .place42 */
+    transform: rotate(180deg); /* Rotate the text by 90 degrees */
+    transform-origin: center; 
+    margin-right: 1px;
+    
+
+}
+
+.place26{
+    display: block;
+    position: absolute;
+    top: 0;
+    left:0 ;
+    width: 14%;
+    height: 33%;
+    clip-path: polygon(3% 4% , 100% 45% , 100% 99% , 4% 99% );
+    background-color:white;
+    
+}
+
+.place26 span {
+    display: block; /* Ensure the text is treated as a block element */
+    position: absolute; /* Position the text absolutely within .place42 */
+    transform: rotate(90deg); /* Rotate the text by 90 degrees */
+    transform-origin: center; 
+    margin-top: 38px;
+    margin-left: 4px;
+}
+
+.place42{
+    display: block;
+    position: absolute;
+    top: 67%;
+    width: 14%;
+    height: 33%;
+    clip-path: polygon(4% 1% , 99% 1% , 99% 55% , 4% 95% );
+    background-color:white;
+    padding-left: 4px;
+  
+}
+
+.place42 span {
+    display: block; /* Ensure the text is treated as a block element */
+    position: absolute; /* Position the text absolutely within .place42 */
+    transform: rotate(90deg); /* Rotate the text by 90 degrees */
+    transform-origin: center; 
+    margin-top: 1px;
+
+}
+
+
+.place43{
+    display: block;
+    position: absolute;
+    top: 86%;
+    left: 0;
+    width: 33%;
+    height: 14%;
+    clip-path: polygon(45% 0, 99% 0, 99% 96%, 4% 96% );
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    padding-right: 1px;
+
+}
+
+.place59{
+    display: block;
+    position: absolute;
+    top: 86%;
+    right: 0;
+    width: 33%;
+    height: 14%;
+    clip-path: polygon(1% 0, 55% 0, 97% 96% ,1% 96% );
+    background-color: white;
+    padding-left: 1px;
+   
+}
+
+.place60{
+    display: block;
+    position: absolute;
+    top: 67%;
+    right:0 ;
+    width: 14%;
+    height: 33%;
+    clip-path: polygon(0 1% , 100% 1% , 100% 97% , 0 55%  );
+    background-color:white;
+    
+}
+
+.place60 span {
+    display: block; /* Ensure the text is treated as a block element */
+    position: absolute; /* Position the text absolutely within .place42 */
+    transform: rotate(-90deg); /* Rotate the text by 90 degrees */
+    transform-origin: center; 
+    margin-top: 1px;
+    margin-left: 2px;
+}
