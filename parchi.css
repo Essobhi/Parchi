@@ -8,35 +8,49 @@
     
     }
 
+:root {
+    --board-size: min(92vmin, calc(100vw - 2rem), calc(100vh - 2rem));
+    --cell-border: clamp(1px, 0.15vmin, 2px);
+    --token-size: clamp(0.7rem, calc(var(--board-size) / 24), 1.6rem);
+    --safe-token-size: clamp(0.7rem, calc(var(--board-size) / 24), 1.6rem);
+    --center-square-size: calc(var(--board-size) * 0.24);
+}
+
     body {
         display: block;
         background-color: grey;
         position: relative;
-        height: 100vh;
-        width: 100vw;
+        min-height: 100svh;
+        width: 100%;
         margin: 0; 
         background-color: bisque;
+        overflow: hidden;
     }
 .dicecontainer{
-    display: block;
-    position:absolute;
-    width:13%;
-    height: 8%;
-    bottom: 10%;
-    right: 10%;
     display: flex;
+    position: fixed;
+    width: clamp(8rem, 14vw, 11rem);
+    bottom: clamp(0.75rem, 3vw, 2rem);
+    right: clamp(0.75rem, 3vw, 2rem);
     gap: 11%;
+    z-index: 10;
     
 }
 
 .rollbtn{
     display: block;
-width: 80%;
+width: 70%;
 background-color: rgb(254, 204, 143);
 border: none;
 border: 2px solid rgb(248, 179, 95);
 border-radius: 9px;
-font-size: 20px;
+font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+padding: 0.45rem 0.6rem;
+}
+
+.dice {
+    width: clamp(2rem, 4.5vw, 3.5rem);
+    height: auto;
 }
 
 
@@ -49,8 +63,9 @@ display: block;
  left: 50%;
  top: 50%;
  transform: translate(-50%, -50%);
- width: 525px;
- height: 525px;
+ width: var(--board-size);
+ aspect-ratio: 1 / 1;
+ height: auto;
 border: 3px solid black;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -59,8 +74,8 @@ grid-template-rows: repeat(3, 1fr);
 
 .piece{
     display: block;
-    width: 21px; 
-   height: 21px;
+     width: var(--token-size); 
+    height: var(--token-size);
    border: 2px solid black;
    border-radius: 50%;
    background-color: white;
@@ -71,7 +86,7 @@ grid-template-rows: repeat(3, 1fr);
 
 .container{
   display: block;
-  outline: 1px solid black;
+    outline: var(--cell-border) solid black;
     
 }
 #container6{
@@ -101,7 +116,7 @@ grid-template-rows: repeat(3, 1fr);
 .circle {
     width: 70%;
     height:70%;
-    border: 3px solid black;
+    border: clamp(1px, 0.3vmin, 3px) solid black;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -143,24 +158,27 @@ background-color: rgb(216, 1, 1);
 background-color: rgb(67, 67, 240);
  }
 
-  
+
 .square{
     position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-   width: 125px; 
-   height: 125px;
+    width: var(--center-square-size); 
+    height: var(--center-square-size);
    border: 2px solid black;
    
 }
 
 .place{
+   display: block;
    border: 1px solid rgb(0, 0, 0);
    position: relative;
    display: flex;
    justify-content:  left;
    padding-left: 1px;
+    font-size: clamp(0.8rem, calc(var(--board-size) / 28), 1.45rem);
+    line-height: 1;
 }
 .place1{
     border: 1px solid rgb(0, 0, 0);
@@ -168,6 +186,8 @@ background-color: rgb(67, 67, 240);
     display: flex;
     justify-content:  right;
     padding-right: 1px;
+     font-size: clamp(0.8rem, calc(var(--board-size) / 28), 1.45rem);
+     line-height: 1;
  }
 
 .safe{
@@ -181,12 +201,25 @@ position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-   width: 21px; 
-   height: 21px;
+   width: var(--safe-token-size); 
+   height: var(--safe-token-size);
    border: 2px solid black;
    border-radius: 50%;
    background-color: white;
    
+}
+
+.place,
+.place1,
+.place25,
+.place26,
+.place42,
+.place43,
+.place59,
+.place60,
+.place8,
+.place9 {
+    font-size: clamp(0.8rem, calc(var(--board-size) / 28), 1.45rem);
 }
 
 
@@ -267,9 +300,9 @@ position: relative;
     left: 86%;
   border-left: none;
   border-right: none;
-  border-top: 2px solid black;
+  border-top: 3.7px solid black;
   border-bottom: 2px solid black;
-  width: 25px;  
+    width: 14%;  
   height: 35%;
  background-color: blue;
 }
@@ -280,20 +313,21 @@ position: relative;
     top: 0;
     right:0 ;
     width: 14%;
-    height: 33%;
+    height: 33.5%;
     clip-path: polygon(0 45%, 100% 3%, 100% 99% , 0 99% );
     background-color: white;
-    display: flex;
-    justify-content: left;
 }
 
 .place8 span {
     display: block; /* Ensure the text is treated as a block element */
     position: absolute; /* Position the text absolutely within .place42 */
     transform: rotate(-90deg); /* Rotate the text by 90 degrees */
-    transform-origin: center; 
-    margin-top: 42px;
-    margin-left: 7px;
+    transform-origin: bottom; 
+    margin-left:  65%;
+    margin-top: 69%;
+    padding-top: 50%;
+
+
 }
 
 .place9{
@@ -312,8 +346,8 @@ position: relative;
     position: absolute; /* Position the text absolutely within .place42 */
     transform: rotate(180deg); /* Rotate the text by 90 degrees */
     transform-origin: center; 
-    margin-left: 1px;
-    margin-top: 3px;
+    margin-left: 3%;
+    margin-top: 2%;
     
 }
 
@@ -333,7 +367,8 @@ position: relative;
     position: absolute; /* Position the text absolutely within .place42 */
     transform: rotate(180deg); /* Rotate the text by 90 degrees */
     transform-origin: center; 
-    margin-right: 1px;
+    margin-right: 1%;
+    padding-left: 1%;
     
 
 }
@@ -347,6 +382,7 @@ position: relative;
     height: 33%;
     clip-path: polygon(3% 4% , 100% 45% , 100% 99% , 4% 99% );
     background-color:white;
+    padding-top: 18%;
     
 }
 
@@ -355,8 +391,8 @@ position: relative;
     position: absolute; /* Position the text absolutely within .place42 */
     transform: rotate(90deg); /* Rotate the text by 90 degrees */
     transform-origin: center; 
-    margin-top: 38px;
-    margin-left: 4px;
+    margin-top: 10%;
+    margin-left: 7%;
 }
 
 .place42{
@@ -367,7 +403,7 @@ position: relative;
     height: 33%;
     clip-path: polygon(4% 1% , 99% 1% , 99% 55% , 4% 95% );
     background-color:white;
-    padding-left: 4px;
+    padding-left: 1%;
   
 }
 
@@ -376,8 +412,8 @@ position: relative;
     position: absolute; /* Position the text absolutely within .place42 */
     transform: rotate(90deg); /* Rotate the text by 90 degrees */
     transform-origin: center; 
-    margin-top: 1px;
-
+    margin-top: 1%;
+    padding-top: 4%;
 }
 
 
@@ -392,7 +428,7 @@ position: relative;
     background-color: white;
     display: flex;
     justify-content: right;
-    padding-right: 1px;
+    padding-right: 1%;
 
 }
 
@@ -405,7 +441,7 @@ position: relative;
     height: 14%;
     clip-path: polygon(1% 0, 55% 0, 97% 96% ,1% 96% );
     background-color: white;
-    padding-left: 1px;
+    padding-left: 1%;
    
 }
 
@@ -418,7 +454,7 @@ position: relative;
     height: 33%;
     clip-path: polygon(0 1% , 100% 1% , 100% 97% , 0 55%  );
     background-color:white;
-    
+    padding-top: 1%;
 }
 
 .place60 span {
@@ -426,6 +462,6 @@ position: relative;
     position: absolute; /* Position the text absolutely within .place42 */
     transform: rotate(-90deg); /* Rotate the text by 90 degrees */
     transform-origin: center; 
-    margin-top: 1px;
-    margin-left: 2px;
+    margin-top: 1%;
+    margin-left: 2%;
 }
